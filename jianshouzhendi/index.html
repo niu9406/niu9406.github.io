@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>坚守阵地2-硬核策略塔防游戏攻略与资源站</title>
+    <meta name="description" content="坚守阵地2 (Fortress Guardian 2) 硬核塔防游戏在线攻略与资源站。提供游戏下载、关卡详解、英雄培养、武器合成及通关技巧，助你突破防线，击败机械大军。">
+    <meta name="keywords" content="坚守阵地2, 塔防游戏, 硬核塔防, 游戏攻略, FortGuardian2, 策略游戏">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #ff4757;
+            --secondary: #2f3542;
+            --accent: #ffa502;
+            --bg-dark: #1e272e;
+            --bg-card: #2f3640;
+            --text-light: #f1f2f6;
+            --text-gray: #a4b0be;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(30, 39, 46, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--primary), #ff6b81);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #2f3542, #1e272e);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Using a placeholder pattern for defense theme */
+            background-image: radial-gradient(circle at 20% 50%, rgba(255, 71, 87, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(255, 165, 2, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 35px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--text-gray);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            background-color: var(--text-light);
+            color: var(--secondary);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Game Modes */
+        .game-modes {
+            padding: 80px 0;
+            background-color: #252d34;
+        }
+
+        .mode-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .mode-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .mode-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .mode-info p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .mode-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mode-list li::before {
+            content: '➤';
+            color: var(--primary);
+        }
+
+        .mode-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: linear-gradient(45deg, #2f3542, #1e272e);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .mode-image::after {
+            content: '战略指挥中心';
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgba(255,255,255,0.1);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            padding: 80px 0;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .guide-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .guide-thumb {
+            height: 160px;
+            background-color: #3d4650;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 3rem;
+        }
+
+        .guide-content {
+            padding: 20px;
+        }
+
+        .guide-tag {
+            font-size: 0.75rem;
+            background: rgba(255, 71, 87, 0.1);
+            color: var(--primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .guide-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .guide-desc {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: #3d4650;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            display: none;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161a1e;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mode-container {
+                flex-direction: column;
+            }
+            
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span style="font-size: 1.8rem;">🛡️</span>
+                <span>坚守阵地2</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">首页</a></li>
+                    <li><a href="#features">游戏特色</a></li>
+                    <li><a href="#guide">攻略指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="download-btn">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1>构筑防线，<br>抵御机械大军的入侵</h1>
+                <p>《坚守阵地2》是一款融合了策略塔防与RPG元素的硬核游戏。收集资源，合成武器，招募英雄，在无尽的关卡中保卫你的基地。</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>100+</h3>
+                        <p>关卡挑战</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>强力武器</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>20+</h3>
+                        <p>传奇英雄</p>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="alert('即将跳转至下载页面...')">开始游戏</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('guide').scrollIntoView({behavior: 'smooth'})">查看攻略</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">游戏核心特色</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">⚔️</div>
+                        <h3>武器合成系统</h3>
+                        <p>通过战斗获取蓝图和材料，将基础武器升级为致命的毁灭性武器，打造专属于你的战斗风格。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🧙‍♂️</div>
+                        <h3>英雄招募与养成</h3>
+                        <p>每位英雄拥有独特的技能和属性，合理搭配阵容是通关的关键。升级装备，强化技能，组建最强战队。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <h3>多样化地形</h3>
+                        <p>沙漠、森林、雪山、废墟...每一张地图都有独特的地形机制和敌人波次，考验你的临场应变能力。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Modes Section -->
+        <section class="game-modes">
+            <div class="container">
+                <div class="mode-container">
+                    <div class="mode-info">
+                        <h2>策略与战术的完美结合</h2>
+                        <p>不同于传统的放置类塔防，《坚守阵地2》强调玩家的主动策略。你需要根据敌人的类型（地面、空中、坦克）实时调整防御塔的布局和升级顺序。</p>
+                        <ul class="mode-list">
+                            <li><strong>无尽模式：</strong>挑战自我极限，看看你能坚持多少波攻击。</li>
+                            <li><strong>限时挑战：</strong>在规定时间内消灭尽可能多的敌人。</li>
+                            <li><strong>生存竞技：</strong>与其他玩家比拼最高存活波数。</li>
+                        </ul>
+                        <br>
+                        <button class="btn btn-primary">了解更多模式</button>
+                    </div>
+                    <div class="mode-image">
+                        <!-- Visual placeholder for game mode -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <h2 class="section-title">热门攻略精选</h2>
+                <div class="guide-grid">
+                    <article class="guide-card">
+                        <div class="guide-thumb">🔫</div>
+                        <div class="guide-content">
+                            <span class="guide-tag">武器</span>
+                            <h3 class="guide-title">新手必看：最强武器合成路线推荐</h3>
+                            <p class="guide-desc">详细解析从基础机枪到最终武器的合成材料需求，助你快速成型。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="guide-card">
+                        <div class="guide-thumb">🛡️</div>
+                        <div class="guide-content">
+                            <span class="guide-tag">阵容</span>
+                            <h3 class="guide-title">S级英雄搭配指南：如何应对空中单位</h3>
+                            <p class="guide-desc">针对机械大军中的飞行载具，推荐高射程和范围伤害的英雄组合。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="guide-card">
+                        <div class="guide-thumb">💰</div>
+                        <div class="guide-content">
+                            <span class="guide-tag">资源</span>
+                            <h3 class="guide-title">资源管理技巧：如何最大化金币收益</h3>
+                            <p class="guide-desc">掌握关卡奖励机制，利用连击和隐藏宝箱，让你的经济起飞。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="guide-card">
+                        <div class="guide-thumb">⚡</div>
+                        <div class="guide-content">
+                            <span class="guide-tag">技巧</span>
+                            <h3 class="guide-title">第50关完美通关打法详解</h3>
+                            <p class="guide-desc">针对机械大军的最终决战，提供具体的防御塔摆放点位图解。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">《坚守阵地2》支持哪些平台？</div>
+                        <div class="faq-answer">目前游戏支持iOS和Android双平台，同时我们也计划推出PC版客户端，敬请期待。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏是否需要联网？</div>
+                        <div class="faq-answer">游戏核心玩法支持离线游玩，但排行榜、英雄招募和每日签到等功能需要保持网络连接。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何获取更多的英雄碎片？</div>
+                        <div class="faq-answer">英雄碎片主要通过完成主线关卡掉落、参与限时活动以及每日签到奖励获取。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏内购会影响平衡性吗？</div>
+                        <div class="faq-answer">我们采用了公平的付费机制，所有强力武器和英雄均可通过正常游戏进程获取，内购仅加速获取速度。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">游戏简介</a></li>
+                        <li><a href="#">开发团队</a></li>
+                        <li><a href="#">联系合作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏资源</h4>
+                    <ul>
+                        <li><a href="#">版本下载</a></li>
+                        <li><a href="#">皮肤图鉴</a></li>
+                        <li><a href="#">更新日志</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">新手教程</a></li>
+                        <li><a href="#">故障排除</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">玩家交流群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 坚守阵地2资源站. All Rights Reserved. 本站为玩家攻略聚合平台，游戏版权归原开发商所有。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
