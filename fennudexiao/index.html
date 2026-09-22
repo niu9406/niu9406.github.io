@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="愤怒的小孩电影免费 - 本站提供《愤怒的小孩》高清免费在线观看资源，包含剧情简介、角色介绍及观影指南。支持流畅播放，无广告打扰。">
+    <meta name="keywords" content="愤怒的小孩电影免费, 愤怒的小孩在线观看, 愤怒的小孩高清, 愤怒的小孩资源">
+    <title>愤怒的小孩电影免费-高清在线观看与资源推荐</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e53935;
+            --secondary-color: #212121;
+            --accent-color: #ff7043;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #757575;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #f0f0f0;
+            border-radius: 20px;
+            padding: 4px 12px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 4px;
+            width: 150px;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #424242 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .btn-play {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4);
+        }
+
+        .btn-play:hover {
+            background-color: #d32f2f;
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            width: 100%;
+            flex: 1;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .more-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .movie-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .poster-wrapper {
+            position: relative;
+            padding-top: 150%; /* 2:3 Aspect Ratio */
+            background-color: #eee;
+        }
+
+        .poster-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .card-info {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .quality-tag {
+            color: #fbc02d;
+            font-weight: 600;
+        }
+
+        /* Info Section */
+        .info-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .info-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .info-content p {
+            margin-bottom: 16px;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        .info-sidebar {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar-item {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .sidebar-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Episodes List */
+        .episode-list {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .episode-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 12px;
+        }
+
+        .episode-btn {
+            background: #f5f5f5;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .episode-btn:hover, .episode-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #9e9e9e;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #9e9e9e;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 12px;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .info-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .search-bar {
+                display: none; /* Simplify for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                <span>极速影院</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">国产电影</a></li>
+                    <li><a href="#">高分推荐</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索电影...">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>愤怒的小孩电影免费</h1>
+            <p>寻找《愤怒的小孩》高清在线观看资源？本站提供流畅、清晰的观影体验，支持多设备播放。</p>
+            <a href="#player" class="btn-play">立即观看</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Featured Section -->
+        <section id="player">
+            <div class="section-header">
+                <h2 class="section-title">正在播放</h2>
+            </div>
+            <div style="background: #000; padding: 20px; border-radius: 8px; margin-bottom: 40px;">
+                <div style="width: 100%; background: #000; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #666; border: 1px dashed #444;">
+                    <span>视频播放区域 (模拟)</span>
+                </div>
+                <div style="padding: 10px 0; display: flex; justify-content: space-between; color: #ddd;">
+                    <span>《愤怒的小孩》 - 第1集</span>
+                    <span>高清</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Synopsis Section -->
+        <section class="info-section">
+            <div class="section-header">
+                <h2 class="section-title">剧情简介</h2>
+            </div>
+            <div class="info-layout">
+                <div class="info-content">
+                    <p>《愤怒的小孩》是一部由孙周执导，孙红雷、王珞丹、刘桦、范伟等主演的家庭喜剧电影。影片讲述了15岁的孙小果（孙红雷 饰）在父母出国期间，独自一人在家生活，最终与邻居孤寡老人（范伟 饰）之间发生的一段感人故事。</p>
+                    <p>影片虽然名为“愤怒的小孩”，但实际上充满了温情与幽默。小果因父母长期忽视而感到孤独，他的“愤怒”实际上是对爱与关注的渴望。影片通过幽默的笔触，展现了当代都市家庭中存在的代沟问题以及亲情的重要性。</p>
+                    <p>这部电影适合全年龄段观众观看，既有笑点也有泪点，是一部不可多得的国产温情喜剧佳作。如果您正在寻找“愤怒的小孩电影免费”观看资源，本站致力于提供最优质的观影体验。</p>
+                </div>
+                <aside class="info-sidebar">
+                    <div class="sidebar-item">
+                        <span class="sidebar-label">导演</span>
+                        <span class="sidebar-text">孙周</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <span class="sidebar-label">主演</span>
+                        <span class="sidebar-text">孙红雷、王珞丹、范伟、刘桦</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <span class="sidebar-label">类型</span>
+                        <span class="sidebar-text">剧情 / 喜剧 / 家庭</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <span class="sidebar-label">上映年份</span>
+                        <span class="sidebar-text">2010年</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <span class="sidebar-label">片长</span>
+                        <span class="sidebar-text">96分钟</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Episodes Section -->
+        <section class="episodes-section">
+            <div class="section-header">
+                <h2 class="section-title">全集列表</h2>
+            </div>
+            <div class="episode-list">
+                <div class="episode-grid">
+                    <button class="episode-btn active">第1集</button>
+                    <button class="episode-btn">第2集</button>
+                    <button class="episode-btn">第3集</button>
+                    <button class="episode-btn">第4集</button>
+                    <button class="episode-btn">第5集</button>
+                    <button class="episode-btn">第6集</button>
+                    <button class="episode-btn">第7集</button>
+                    <button class="episode-btn">第8集</button>
+                    <button class="episode-btn">第9集</button>
+                    <button class="episode-btn">第10集</button>
+                    <button class="episode-btn">第11集</button>
+                    <button class="episode-btn">第12集</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="recommendations">
+            <div class="section-header">
+                <h2 class="section-title">推荐观看</h2>
+            </div>
+            <div class="movie-grid">
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie1/300/450" alt="电影海报">
+                        <span class="badge">HD</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">非诚勿扰</h3>
+                        <div class="card-meta">
+                            <span>2010</span>
+                            <span class="quality-tag">HD</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie2/300/450" alt="电影海报">
+                        <span class="badge">HD</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">让子弹飞</h3>
+                        <div class="card-meta">
+                            <span>2010</span>
+                            <span class="quality-tag">HD</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie3/300/450" alt="电影海报">
+                        <span class="badge">HD</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">三枪拍案惊奇</h3>
+                        <div class="card-meta">
+                            <span>2010</span>
+                            <span class="quality-tag">HD</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie4/300/450" alt="电影海报">
+                        <span class="badge">HD</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">大笑江湖</h3>
+                        <div class="card-meta">
+                            <span>2010</span>
+                            <span class="quality-tag">HD</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="section-header">
+                <h2 class="section-title">常见问题</h2>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">《愤怒的小孩》在哪里可以免费观看？</div>
+                <div class="faq-answer">您可以在本站通过“愤怒的小孩电影免费”搜索找到相关资源。本站提供正版高清的在线播放服务，无需下载，直接点击即可观看。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">观看需要收费吗？</div>
+                <div class="faq-answer">本站大部分电影资源为免费观看。部分高清资源或独家内容可能需要会员权限，具体请查看页面提示。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">播放速度如何？</div>
+                <div class="faq-answer">我们使用多线路CDN加速技术，确保在不同网络环境下都能获得流畅的播放体验。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">版权声明</a>
+                <a href="#">联系合作</a>
+            </div>
+            <p class="copyright">&copy; 2023 极速影院资源网. 保留所有权利.</p>
+            <p class="copyright" style="font-size: 0.75rem; margin-top: 8px; color: #666;">本站内容均来自互联网，仅供学习交流，请勿用于商业用途。如侵权请联系删除。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple interaction for episode buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.episode-btn');
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    buttons.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Simulate video change
+                    const videoContainer = document.querySelector('#player div');
+                    videoContainer.innerHTML = '<span>正在切换至第' + this.textContent + '集...</span>';
+                    
+                    setTimeout(() => {
+                        videoContainer.innerHTML = '<span>视频播放区域 (模拟) - 第' + this.textContent + '</span>';
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
