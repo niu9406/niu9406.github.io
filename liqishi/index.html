@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="离奇事 - 汇集全球真实灵异事件、都市传说与未解之谜。探索超自然现象背后的真相，阅读惊悚悬疑故事，体验心跳加速的探索之旅。">
+    <meta name="keywords" content="离奇事,灵异事件,都市传说,未解之谜,恐怖故事,真实灵异">
+    <title>离奇事-真实灵异事件与未解之谜探索</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #1f2833;
+            --accent-color: #66fcf1;
+            --accent-dim: #45a29e;
+            --text-main: #c5c6c7;
+            --text-highlight: #ffffff;
+            --danger: #ff4d4d;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(11, 12, 16, 0.95);
+            border-bottom: 1px solid var(--accent-dim);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-highlight);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            background: var(--card-bg);
+            border: 1px solid var(--accent-dim);
+            color: var(--text-highlight);
+            padding: 8px 15px;
+            border-radius: 20px;
+            outline: none;
+            width: 200px;
+            transition: width 0.3s;
+        }
+
+        .search-box input:focus {
+            width: 250px;
+            border-color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/ghost/1920/600') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, transparent 20%, var(--bg-color) 90%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--text-highlight);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent-dim);
+            color: var(--bg-color);
+            font-weight: bold;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 252, 241, 0.4);
+        }
+
+        /* 分类入口 */
+        .categories {
+            padding: 40px 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .category-card h3 {
+            color: var(--text-highlight);
+            margin-bottom: 10px;
+        }
+
+        .category-card p {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* 内容区块 */
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--text-highlight);
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--accent-dim);
+        }
+
+        .section-title a:hover {
+            color: var(--accent-color);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .news-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .news-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--accent-color);
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: var(--text-highlight);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: #999;
+            margin-bottom: 20px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+        }
+
+        /* 专题推荐 */
+        .feature-section {
+            background: linear-gradient(135deg, #1f2833 0%, #0b0c10 100%);
+            padding: 60px 0;
+            margin-bottom: 60px;
+            border-top: 1px solid var(--accent-dim);
+            border-bottom: 1px solid var(--accent-dim);
+        }
+
+        .feature-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .feature-img {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(102, 252, 241, 0.2);
+        }
+
+        .feature-img img {
+            width: 100%;
+            display: block;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text h2 {
+            font-size: 2rem;
+            color: var(--text-highlight);
+            margin-bottom: 20px;
+        }
+
+        .feature-text p {
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+
+        /* 列表页样式 */
+        .list-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .list-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: background 0.2s;
+        }
+
+        .list-item:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .list-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: rgba(102, 252, 241, 0.2);
+            line-height: 1;
+            min-width: 40px;
+        }
+
+        .list-content h3 {
+            color: var(--text-highlight);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .list-content p {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--text-highlight);
+        }
+
+        .faq-question:hover {
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #999;
+            display: none;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #050608;
+            padding: 50px 0 20px;
+            border-top: 1px solid #333;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-highlight);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #888;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .search-box {
+                display: none; /* 移动端简化 */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .feature-container {
+                flex-direction: column;
+            }
+
+            .hero {
+                height: 400px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>◆</span> 离奇事
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#list">灵异档案</a></li>
+                    <li><a href="#feature">深度专题</a></li>
+                    <li><a href="#faq">探索指南</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索未解之谜...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首屏 Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探索世界的阴影面</h1>
+                <p>这里汇集了全球各地的真实灵异事件、都市传说与未解之谜。在理性与超自然之间，寻找那些无法解释的真相。</p>
+                <button class="btn" onclick="document.getElementById('list').scrollIntoView({behavior: 'smooth'})">开始探索</button>
+            </div>
+        </section>
+
+        <!-- 分类入口 -->
+        <section class="container categories">
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">👻</div>
+                    <h3>真实灵异</h3>
+                    <p>收录全球各地的目击报告与灵异照片</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏚️</div>
+                    <h3>凶宅传说</h3>
+                    <p>探访那些闹鬼的废弃建筑与历史现场</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🚗</div>
+                    <h3>都市怪谈</h3>
+                    <p>发生在城市角落里离奇失踪与诡异事件</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🧬</div>
+                    <h3>超自然现象</h3>
+                    <p>从UFO目击到心灵感应的科学探索</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 灵异档案列表 -->
+        <section id="list" class="container">
+            <div class="section-title">
+                <h2>最新灵异档案</h2>
+                <a href="#">查看更多 &rarr;</a>
+            </div>
+            
+            <div class="list-container">
+                <article class="list-item">
+                    <div class="list-number">01</div>
+                    <div class="list-content">
+                        <h3>日本东京公寓的午夜敲门声</h3>
+                        <p>一名独居女性多次在凌晨3点听到玄关传来敲击声，但门锁完好无损。经过调查，这并非人为，而是某种物理现象。</p>
+                    </div>
+                </article>
+
+                <article class="list-item">
+                    <div class="list-number">02</div>
+                    <div class="list-content">
+                        <h3>百慕大三角：消失的船只与飞机</h3>
+                        <p>数百年来，无数飞行器和船只在此区域神秘失踪。科学家提出了磁场异常、漩涡甚至外星干预等多种假说，但至今无定论。</p>
+                    </div>
+                </article>
+
+                <article class="list-item">
+                    <div class="list-number">03</div>
+                    <div class="list-content">
+                        <h3>中国湘西“赶尸”传说</h3>
+                        <p>湘西地区流传着一种神秘的赶尸巫术，传说巫师能控制死尸行走。虽然缺乏现代科学验证，但这已成为中国民俗文化中独特的一部分。</p>
+                    </div>
+                </article>
+
+                <article class="list-item">
+                    <div class="list-number">04</div>
+                    <div class="list-content">
+                        <h3>切尔诺贝利禁区的心跳声</h3>
+                        <p>探险者在废弃的普里皮亚季市拍摄到一段诡异的录音，其中似乎包含有节奏的敲击声，被怀疑是某种未知生物或能量反应。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 深度专题 -->
+        <section id="feature" class="feature-section">
+            <div class="container feature-container">
+                <div class="feature-img">
+                    <img src="https://picsum.photos/seed/forest/800/600" alt="迷雾森林">
+                </div>
+                <div class="feature-text">
+                    <h2>迷雾森林：消失的徒步者</h2>
+                    <p>在一片常年被浓雾笼罩的原始森林中，多名经验丰富的登山者在同一个坐标点神秘消失，连GPS信号都会突然中断。当地居民流传着关于“森林之灵”的警告。</p>
+                    <p>我们将深入调查这片森林的地理环境、气象数据以及幸存者的证词，试图解开这起持续多年的离奇失踪案背后的真相。</p>
+                    <a href="#" class="btn">阅读完整报告</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图文资讯 -->
+        <section class="container">
+            <div class="section-title">
+                <h2>热门探索</h2>
+                <a href="#">更多资讯 &rarr;</a>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="card-image">
+                        <span class="card-tag">都市传说</span>
+                        <img src="https://picsum.photos/seed/city/400/300" alt="午夜出租车">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">深夜乘坐空出租车</h3>
+                        <p class="card-excerpt">一名出租车司机在深夜载客时，发现后座的乘客全身湿透且没有体温，下车后车辆自动熄火，后备箱里竟是一堆腐烂的衣物。</p>
+                        <div class="card-meta">
+                            <span>阅读：2.4万</span>
+                            <span>2023-10-15</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="card-image">
+                        <span class="card-tag">历史悬案</span>
+                        <img src="https://picsum.photos/seed/ancient/400/300" alt="古堡">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">苏格兰古堡的幽灵婚礼</h3>
+                        <p class="card-excerpt">据传在一百年前的一个雨夜，这座古堡内举行了一场没有宾客的婚礼，新郎新娘在仪式结束后就消失了，只留下空荡荡的礼服。</p>
+                        <div class="card-meta">
+                            <span>阅读：1.8万</span>
+                            <span>2023-10-12</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="card-image">
+                        <span class="card-tag">动物异象</span>
+                        <img src="https://picsum.photos/seed/cat/400/300" alt="诡异猫咪">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">凌晨四点的猫叫声</h3>
+                        <p class="card-excerpt">一种流传甚广的说法是，如果听到猫在凌晨四点对着镜子叫，意味着家中将发生不幸。这究竟是迷信还是某种生物本能的预警？</p>
+                        <div class="card-meta">
+                            <span>阅读：1.2万</span>
+                            <span>2023-10-10</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ 常见问题 -->
+        <section id="faq" class="container faq-section">
+            <div class="section-title">
+                <h2>探索指南与常见问题</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">这些故事都是真实的吗？</div>
+                <div class="faq-answer">
+                    <p>本站收录的故事大多来源于民间流传、历史档案记录或个人目击报告。虽然我们尽量核实来源，但部分内容属于都市传说或未解之谜，无法用现代科学完全解释。我们尊重读者的判断力，请理性看待。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何投稿我的灵异经历？</div>
+                <div class="faq-answer">
+                    <p>如果您有亲身经历的离奇事件，欢迎通过页面底部的联系方式发送给我们。请确保内容真实、详细，并附上相关的时间地点。我们会对稿件进行筛选和编辑后发布。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">为什么要探索这些“离奇事”？</div>
+                <div class="faq-answer">
+                    <p>人类天生对未知充满好奇。探索离奇事件不仅是为了满足猎奇心理，更是为了了解人类心理、文化传统以及我们尚未掌握的自然规律。在恐惧中寻找理性，是探索未知的意义所在。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于离奇事</h4>
+                    <p style="color:#666; font-size:0.9rem;">我们致力于收集和整理全球范围内的离奇事件与未解之谜，为探索者提供一个分享与交流的平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索分类</h4>
+                    <ul>
+                        <li><a href="#">真实灵异</a></li>
+                        <li><a href="#">都市传说</a></li>
+                        <li><a href="#">凶宅档案</a></li>
+                        <li><a href="#">超自然现象</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与联系</h4>
+                    <ul>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">商务合作</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 离奇事探索网. All Rights Reserved. 仅供娱乐与科普参考。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 手风琴交互
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.5)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+  </html>
