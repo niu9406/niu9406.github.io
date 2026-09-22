@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="吟咏风歌 - 汇聚古风诗词、原创现代诗歌与文学赏析的文学社区。提供诗词创作、鉴赏、朗诵及传统文化交流平台。">
+    <meta name="keywords" content="吟咏风歌,古风诗词,现代诗歌,文学赏析,诗词朗诵,文学社区">
+    <title>吟咏风歌 - 古风诗词与现代诗歌的文学殿堂</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a3b32;
+            --accent-color: #cfaa6e;
+            --bg-color: #f9f7f2;
+            --card-bg: #ffffff;
+            --text-main: #2c2c2c;
+            --text-light: #666666;
+            --border-color: #e0ded8;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Georgia", serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .header-actions button:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(74, 59, 50, 0.8), rgba(74, 59, 50, 0.6)), url('https://picsum.photos/seed/poetry/1600/900') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(207, 170, 110, 0.4);
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .category-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .category-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Latest Poems Grid */
+        .poems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .poem-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .poem-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .poem-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .poem-author {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .poem-preview {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .poem-link {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .poem-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .poem-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #fff;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 40px;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .feature-item h4 {
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+            color: var(--primary-color);
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .quote-section blockquote {
+            font-size: 1.5rem;
+            font-family: "KaiTi", "STKaiti", serif;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-section cite {
+            display: block;
+            margin-top: 20px;
+            font-style: normal;
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .faq-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2a1f1b;
+            color: #a89f91;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-padding {
+                padding: 40px 0;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>吟</span>咏风歌
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">古风诗词</a></li>
+                    <li><a href="#">现代诗歌</a></li>
+                    <li><a href="#">文学赏析</a></li>
+                    <li><a href="#">社区论坛</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button type="button">投稿</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>吟咏风歌</h1>
+                <p>于文字间寻觅风骨，在韵律中感悟人生。汇聚古今佳作，传承中华文脉。</p>
+                <a href="#latest" class="hero-btn">开始阅读</a>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>探索文学分类</h2>
+                    <p>无论您偏爱唐诗宋词的婉约，还是现代自由诗的奔放，这里都有属于您的精神角落。</p>
+                </div>
+                <div class="category-grid">
+                    <article class="category-card">
+                        <div class="category-icon">📜</div>
+                        <h3>古风诗词</h3>
+                        <p>收录历代经典诗篇、宋词元曲，以及当代古风创作。感受平仄韵律中的千古风雅。</p>
+                    </article>
+                    <article class="category-card">
+                        <div class="category-icon">✒️</div>
+                        <h3>现代诗歌</h3>
+                        <p>关注当代诗坛动态，分享自由诗、散文诗作品。捕捉生活中的灵感与哲思。</p>
+                    </article>
+                    <article class="category-card">
+                        <div class="category-icon">📖</div>
+                        <h3>文学赏析</h3>
+                        <p>深度解读经典名著，剖析创作手法与时代背景。提升文学素养，陶冶情操。</p>
+                    </article>
+                    <article class="category-card">
+                        <div class="category-icon">🎤</div>
+                        <h3>诗词朗诵</h3>
+                        <p>提供朗诵技巧指导与音频资源，让文字通过声音焕发新的生命力。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Works Section -->
+        <section id="latest" class="section-padding" style="background-color: #f4f2eb;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>精选佳作推荐</h2>
+                    <p>每日更新，精选全网优质内容，助您领略文字之美。</p>
+                </div>
+                <div class="poems-grid">
+                    <article class="poem-card">
+                        <span class="poem-tag">古风</span>
+                        <h3 class="poem-title">山居秋暝</h3>
+                        <div class="poem-author">[唐] 王维</div>
+                        <p class="poem-preview">空山新雨后，天气晚来秋。明月松间照，清泉石上流。竹喧归浣女，莲动下渔舟。随意春芳歇，王孙自可留...</p>
+                        <a href="#" class="poem-link">阅读全文</a>
+                    </article>
+                    <article class="poem-card">
+                        <span class="poem-tag">现代</span>
+                        <h3 class="poem-title">夜的诗行</h3>
+                        <div class="poem-author">佚名</div>
+                        <p class="poem-preview">月光如水，静静流淌过窗棂，洗去白日的喧嚣与尘埃。我在文字的荒原里，种下一朵不凋零的花，等待黎明...</p>
+                        <a href="#" class="poem-link">阅读全文</a>
+                    </article>
+                    <article class="poem-card">
+                        <span class="poem-tag">古风</span>
+                        <h3 class="poem-title">长恨歌</h3>
+                        <div class="poem-author">[唐] 白居易</div>
+                        <p class="poem-preview">汉皇重色思倾国，御宇多年求不得。杨家有女初长成，养在深闺人未识。天生丽质难自弃，一朝选在君王侧...</p>
+                        <a href="#" class="poem-link">阅读全文</a>
+                    </article>
+                    <article class="poem-card">
+                        <span class="poem-tag">散文</span>
+                        <h3 class="poem-title">岁月的缝隙</h3>
+                        <div class="poem-author">林徽因</div>
+                        <p class="poem-preview">时间是一条长河，我们都是河中的摆渡人。在岁月的缝隙里，拾起那些被遗忘的片段，拼凑成完整的自己...</p>
+                        <a href="#" class="poem-link">阅读全文</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <div class="container">
+                <blockquote>
+                    “诗者，志之所之也。在心为志，发言为诗。”
+                </blockquote>
+                <cite>——《毛诗序》</cite>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section-padding features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>平台特色</h2>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <h4>海量馆藏</h4>
+                        <p>汇集从先秦诸子到当代文学的数万部作品，分类清晰，检索便捷。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>原创扶持</h4>
+                        <p>为文学爱好者提供展示舞台，定期举办线上诗歌大赛与征文活动。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>互动交流</h4>
+                        <p>建立以诗词为核心的社区，支持评论、点赞与收藏，让阅读不再孤独。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>名家导读</h4>
+                        <p>邀请知名作家、学者入驻，开设专栏，解读经典，指导创作。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-padding" style="background-color: #f9f7f2;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>如何投稿作品？</h4>
+                        <p>请点击页面右上角的“投稿”按钮，填写作品信息并上传文档，我们的编辑团队将在3个工作日内审核。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>网站内容是否免费？</h4>
+                        <p>本站所有基础阅读内容均对用户免费开放，旨在推广文学传播。部分深度课程或活动可能需要付费参与。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何参与朗诵活动？</h4>
+                        <p>关注我们的社区板块“朗诵专区”，上传您的音频作品，参与每周的“最佳朗读者”评选。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>作品版权如何保障？</h4>
+                        <p>我们尊重每一位创作者的版权。用户上传作品即视为授权本站进行非商业性展示，具体协议详见帮助中心。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>关于吟咏风歌</h5>
+                    <p>致力于打造最纯净的中文文学阅读与交流平台，让诗歌回归生活，让文字温暖人心。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>快速导航</h5>
+                    <ul>
+                        <li><a href="#">网站首页</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>热门分类</h5>
+                    <ul>
+                        <li><a href="#">唐诗三百首</a></li>
+                        <li><a href="#">宋词精选</a></li>
+                        <li><a href="#">现代诗社</a></li>
+                        <li><a href="#">散文随笔</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>关注我们</h5>
+                    <ul>
+                        <li>微信公众号：吟咏风歌</li>
+                        <li>新浪微博：@吟咏风歌文学</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 吟咏风歌文学社区 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
