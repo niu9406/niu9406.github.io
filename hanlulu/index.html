@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩璐璐个人主页 - 汇集最新作品展示、创作历程、艺术风格介绍及相关资讯。">
+    <meta name="keywords" content="韩璐璐,韩璐璐主页,韩璐璐作品,韩璐璐艺术,插画师">
+    <title>韩璐璐-个人作品展示与创作主页</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .avatar-container {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            overflow: hidden;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background-color: #ddd;
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        /* About & Bio */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .bio-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .info-item {
+            margin-bottom: 16px;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .info-value {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .bio-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .art-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .art-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .art-image {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .art-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .art-card:hover .art-image img {
+            transform: scale(1.05);
+        }
+
+        .art-info {
+            padding: 20px;
+        }
+
+        .art-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .art-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Categories */
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .tag {
+            padding: 8px 16px;
+            background-color: #f0f2f5;
+            color: var(--text-secondary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Contact */
+        .contact-box {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 0;
+                gap: 16px;
+            }
+
+            nav ul {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">韩璐<span>璐</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">主页</a></li>
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#works">作品集</a></li>
+                    <li><a href="#contact">联系合作</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="avatar-container">
+                    <!-- Using a seed to ensure a consistent placeholder image -->
+                    <img src="https://picsum.photos/seed/hanlulu/300/300" alt="韩璐璐头像">
+                </div>
+                <h1>韩璐璐</h1>
+                <p>专注于视觉叙事与创意设计的独立创作者。致力于通过色彩与构图，探索情感与现实的边界。</p>
+                <a href="#works" class="btn">查看作品</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>关于韩璐璐</h2>
+                    <p>关于创作理念与背景介绍</p>
+                </div>
+                <div class="about-grid">
+                    <aside class="bio-card">
+                        <div class="info-item">
+                            <span class="info-label">职业</span>
+                            <span class="info-value">插画师 / 视觉设计师</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">所在地</span>
+                            <span class="info-value">中国 · 北京</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">从业经验</span>
+                            <span class="info-value">8年</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">风格标签</span>
+                            <div class="category-list" style="margin-top: 8px;">
+                                <a href="#" class="tag">赛博朋克</a>
+                                <a href="#" class="tag">水彩</a>
+                                <a href="#" class="tag">二次元</a>
+                            </div>
+                        </div>
+                    </aside>
+                    <article class="bio-text">
+                        <p>韩璐璐是一名在数字艺术领域活跃的创作者，擅长将传统绘画技法与现代数字软件相结合。自2015年起，韩璐璐开始在各大网络平台发布原创插画作品，逐渐积累了稳定的粉丝群体。</p>
+                        <br>
+                        <p>韩璐璐的创作主题多围绕都市生活、自然景观以及科幻幻想展开。在创作过程中，韩璐璐注重光影的变化与色彩的搭配，力求每一幅作品都能传达出独特的情感氛围。韩璐璐认为，艺术不仅是视觉的享受，更是情感交流的桥梁。</p>
+                        <br>
+                        <p>除了个人创作外，韩璐璐也积极参与商业项目合作，为书籍封面、游戏概念设计以及品牌视觉识别提供专业的视觉解决方案。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>精选作品</h2>
+                    <p>近期创作与项目展示</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Work 1 -->
+                    <article class="art-card">
+                        <div class="art-image">
+                            <img src="https://picsum.photos/seed/art1/400/300" alt="都市黄昏系列插画">
+                        </div>
+                        <div class="art-info">
+                            <h3 class="art-title">都市黄昏系列</h3>
+                            <p class="art-desc">探索城市霓虹与自然光影的交织，记录下都市人疲惫而真实的瞬间。</p>
+                        </div>
+                    </article>
+
+                    <!-- Work 2 -->
+                    <article class="art-card">
+                        <div class="art-image">
+                            <img src="https://picsum.photos/seed/art2/400/300" alt="静谧森林">
+                        </div>
+                        <div class="art-info">
+                            <h3 class="art-title">静谧森林</h3>
+                            <p class="art-desc">运用水彩技法描绘的森林深处的宁静，致敬自然的原始之美。</p>
+                        </div>
+                    </article>
+
+                    <!-- Work 3 -->
+                    <article class="art-card">
+                        <div class="art-image">
+                            <img src="https://picsum.photos/seed/art3/400/300" alt="未来幻想">
+                        </div>
+                        <div class="art-info">
+                            <h3 class="art-title">未来幻想</h3>
+                            <p class="art-desc">结合赛博朋克元素的未来城市概念设计，展现高科技与低生活的反差。</p>
+                        </div>
+                    </article>
+
+                    <!-- Work 4 -->
+                    <article class="art-card">
+                        <div class="art-image">
+                            <img src="https://picsum.photos/seed/art4/400/300" alt="人物肖像">
+                        </div>
+                        <div class="art-info">
+                            <h3 class="art-title">人物肖像</h3>
+                            <p class="art-desc">细腻的人物刻画，捕捉人物眼神中的故事感与情绪波动。</p>
+                        </div>
+                    </article>
+
+                     <!-- Work 5 -->
+                     <article class="art-card">
+                        <div class="art-image">
+                            <img src="https://picsum.photos/seed/art5/400/300" alt="静物写生">
+                        </div>
+                        <div class="art-info">
+                            <h3 class="art-title">静物写生</h3>
+                            <p class="art-desc">极简风格的静物组合，通过光影变化表现物体的质感。</p>
+                        </div>
+                    </article>
+
+                     <!-- Work 6 -->
+                     <article class="art-card">
+                        <div class="art-image">
+                            <img src="https://picsum.photos/seed/art6/400/300" alt="概念设计">
+                        </div>
+                        <div class="art-info">
+                            <h3 class="art-title">概念设计稿</h3>
+                            <p class="art-desc">为游戏项目制作的角色与场景概念设计草图。</p>
+                        </div>
+                    </article>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn" style="background-color: var(--primary-color);">浏览更多作品</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="contact-box">
+                    <h2>联系韩璐璐</h2>
+                    <p style="color: var(--text-secondary); margin-top: 10px;">欢迎合作与交流</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" title="微博">WB</a>
+                        <a href="#" class="social-icon" title="B站">B站</a>
+                        <a href="#" class="social-icon" title="微博">微博</a>
+                        <a href="#" class="social-icon" title="邮箱">Email</a>
+                    </div>
+                    <p style="margin-top: 24px; font-size: 0.9rem; color: #999;">
+                        商业合作请发送邮件至：contact@hanlulu.art<br>
+                        (注：此为演示页面，邮箱地址为虚拟格式)
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="logo" style="color: white;">韩璐<span style="color: var(--accent-color);">璐</span></div>
+            <p class="copyright">© 2023 韩璐璐个人主页. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
